@@ -12,6 +12,7 @@ a simple tranform model tool  like JSONModel
 @end
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //anilyze the model with dic
 NSDictionary *appDicNormal = @{@"version":@(1.0),
                                @"appName":@"name of app",
@@ -20,7 +21,7 @@ APPInfo *appInfo = [[APPInfo alloc] initTransformWithDic:appDicNormal];
 
  NSLog(@"version %@,has new %@, appname %@",appInfo.version,(appInfo.hasNew ? @"YES":@"NO"),appInfo.appName);
  //version 1,has new NO, appname weibo
- 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,24 +32,27 @@ APPInfo *appInfo = [[APPInfo alloc] initTransformWithDic:appDicNormal];
  [appInfo insertSelf];
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ 
  if you want to insert if not exist and update if exist
  at this time , you should define an unique key like ,
  assume that the version should be the unique value key
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  @property (nonatomic, strong) NSNumber<UniqueKey>   * version;
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
  or override the fuction like this 
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  +(NSString *)unique_key{
     return @"version";
 }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 at this time,just call like this ,
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [appInfo uniqueInsert];
-
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
