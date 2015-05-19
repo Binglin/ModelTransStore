@@ -14,6 +14,15 @@
 		452060001B0B6BC80082C2DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45205FFF1B0B6BC80082C2DC /* Images.xcassets */; };
 		452060031B0B6BC80082C2DC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452060011B0B6BC80082C2DC /* LaunchScreen.xib */; };
 		4520600F1B0B6BC80082C2DC /* ModelTransStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520600E1B0B6BC80082C2DC /* ModelTransStorageTests.m */; };
+		452060261B0B6CD60082C2DC /* NSObject+BlModelTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520601B1B0B6CD60082C2DC /* NSObject+BlModelTransform.m */; };
+		452060271B0B6CD60082C2DC /* NSObject+BlPersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520601E1B0B6CD60082C2DC /* NSObject+BlPersistentStore.m */; };
+		452060281B0B6CD60082C2DC /* BISqlitePersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 452060201B0B6CD60082C2DC /* BISqlitePersistentStore.m */; };
+		452060291B0B6CD60082C2DC /* RuntimeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 452060221B0B6CD60082C2DC /* RuntimeProperty.m */; };
+		4520602A1B0B6CD60082C2DC /* NSArray+sqlite_store.m in Sources */ = {isa = PBXBuildFile; fileRef = 452060251B0B6CD60082C2DC /* NSArray+sqlite_store.m */; };
+		4520602F1B0B6E4F0082C2DC /* Ads.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520602C1B0B6E4F0082C2DC /* Ads.m */; };
+		452060301B0B6E4F0082C2DC /* APPInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520602E1B0B6E4F0082C2DC /* APPInfo.m */; };
+		452060331B0B6EAD0082C2DC /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 452060321B0B6EAD0082C2DC /* libsqlite3.dylib */; };
+		452060361B0B78C10082C2DC /* BISqlitePersistentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452060351B0B78C10082C2DC /* BISqlitePersistentModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +49,25 @@
 		452060081B0B6BC80082C2DC /* ModelTransStorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTransStorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4520600D1B0B6BC80082C2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4520600E1B0B6BC80082C2DC /* ModelTransStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelTransStorageTests.m; sourceTree = "<group>"; };
+		452060191B0B6CD60082C2DC /* macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
+		4520601A1B0B6CD60082C2DC /* NSObject+BlModelTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BlModelTransform.h"; sourceTree = "<group>"; };
+		4520601B1B0B6CD60082C2DC /* NSObject+BlModelTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BlModelTransform.m"; sourceTree = "<group>"; };
+		4520601D1B0B6CD60082C2DC /* NSObject+BlPersistentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BlPersistentStore.h"; sourceTree = "<group>"; };
+		4520601E1B0B6CD60082C2DC /* NSObject+BlPersistentStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BlPersistentStore.m"; sourceTree = "<group>"; };
+		4520601F1B0B6CD60082C2DC /* BISqlitePersistentStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BISqlitePersistentStore.h; sourceTree = "<group>"; };
+		452060201B0B6CD60082C2DC /* BISqlitePersistentStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISqlitePersistentStore.m; sourceTree = "<group>"; };
+		452060211B0B6CD60082C2DC /* RuntimeProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeProperty.h; sourceTree = "<group>"; };
+		452060221B0B6CD60082C2DC /* RuntimeProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeProperty.m; sourceTree = "<group>"; };
+		452060231B0B6CD60082C2DC /* BIModelExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIModelExtension.h; sourceTree = "<group>"; };
+		452060241B0B6CD60082C2DC /* NSArray+sqlite_store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+sqlite_store.h"; sourceTree = "<group>"; };
+		452060251B0B6CD60082C2DC /* NSArray+sqlite_store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+sqlite_store.m"; sourceTree = "<group>"; };
+		4520602B1B0B6E4F0082C2DC /* Ads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ads.h; sourceTree = "<group>"; };
+		4520602C1B0B6E4F0082C2DC /* Ads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ads.m; sourceTree = "<group>"; };
+		4520602D1B0B6E4F0082C2DC /* APPInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPInfo.h; sourceTree = "<group>"; };
+		4520602E1B0B6E4F0082C2DC /* APPInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPInfo.m; sourceTree = "<group>"; };
+		452060321B0B6EAD0082C2DC /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		452060341B0B78C10082C2DC /* BISqlitePersistentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BISqlitePersistentModel.h; sourceTree = "<group>"; };
+		452060351B0B78C10082C2DC /* BISqlitePersistentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BISqlitePersistentModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452060331B0B6EAD0082C2DC /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 		45205FE61B0B6BC80082C2DC = {
 			isa = PBXGroup;
 			children = (
+				452060321B0B6EAD0082C2DC /* libsqlite3.dylib */,
 				45205FF11B0B6BC80082C2DC /* ModelTransStorage */,
 				4520600B1B0B6BC80082C2DC /* ModelTransStorageTests */,
 				45205FF01B0B6BC80082C2DC /* Products */,
@@ -85,6 +115,8 @@
 				45205FF71B0B6BC80082C2DC /* AppDelegate.m */,
 				45205FF91B0B6BC80082C2DC /* ViewController.h */,
 				45205FFA1B0B6BC80082C2DC /* ViewController.m */,
+				452060311B0B6E530082C2DC /* Model */,
+				452060181B0B6CAD0082C2DC /* ModelTransfrom */,
 				45205FFC1B0B6BC80082C2DC /* Main.storyboard */,
 				45205FFF1B0B6BC80082C2DC /* Images.xcassets */,
 				452060011B0B6BC80082C2DC /* LaunchScreen.xib */,
@@ -117,6 +149,38 @@
 				4520600D1B0B6BC80082C2DC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		452060181B0B6CAD0082C2DC /* ModelTransfrom */ = {
+			isa = PBXGroup;
+			children = (
+				452060191B0B6CD60082C2DC /* macro.h */,
+				452060341B0B78C10082C2DC /* BISqlitePersistentModel.h */,
+				452060351B0B78C10082C2DC /* BISqlitePersistentModel.m */,
+				4520601A1B0B6CD60082C2DC /* NSObject+BlModelTransform.h */,
+				4520601B1B0B6CD60082C2DC /* NSObject+BlModelTransform.m */,
+				4520601D1B0B6CD60082C2DC /* NSObject+BlPersistentStore.h */,
+				4520601E1B0B6CD60082C2DC /* NSObject+BlPersistentStore.m */,
+				4520601F1B0B6CD60082C2DC /* BISqlitePersistentStore.h */,
+				452060201B0B6CD60082C2DC /* BISqlitePersistentStore.m */,
+				452060211B0B6CD60082C2DC /* RuntimeProperty.h */,
+				452060221B0B6CD60082C2DC /* RuntimeProperty.m */,
+				452060231B0B6CD60082C2DC /* BIModelExtension.h */,
+				452060241B0B6CD60082C2DC /* NSArray+sqlite_store.h */,
+				452060251B0B6CD60082C2DC /* NSArray+sqlite_store.m */,
+			);
+			name = ModelTransfrom;
+			sourceTree = "<group>";
+		};
+		452060311B0B6E530082C2DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4520602B1B0B6E4F0082C2DC /* Ads.h */,
+				4520602C1B0B6E4F0082C2DC /* Ads.m */,
+				4520602D1B0B6E4F0082C2DC /* APPInfo.h */,
+				4520602E1B0B6E4F0082C2DC /* APPInfo.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +283,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452060261B0B6CD60082C2DC /* NSObject+BlModelTransform.m in Sources */,
+				452060301B0B6E4F0082C2DC /* APPInfo.m in Sources */,
+				452060281B0B6CD60082C2DC /* BISqlitePersistentStore.m in Sources */,
+				4520602A1B0B6CD60082C2DC /* NSArray+sqlite_store.m in Sources */,
+				4520602F1B0B6E4F0082C2DC /* Ads.m in Sources */,
+				452060361B0B78C10082C2DC /* BISqlitePersistentModel.m in Sources */,
 				45205FFB1B0B6BC80082C2DC /* ViewController.m in Sources */,
+				452060271B0B6CD60082C2DC /* NSObject+BlPersistentStore.m in Sources */,
+				452060291B0B6CD60082C2DC /* RuntimeProperty.m in Sources */,
 				45205FF81B0B6BC80082C2DC /* AppDelegate.m in Sources */,
 				45205FF51B0B6BC80082C2DC /* main.m in Sources */,
 			);
