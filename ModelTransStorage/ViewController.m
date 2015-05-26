@@ -24,32 +24,32 @@
 - (void)tranformDictionaryToModel{
     
     /**APPInfo dic*/
-    NSDictionary *appDicNormal = @{@"version":@(1.0),
+    NSDictionary *appDicNormal_ = @{@"version":@(1.0),
                                    @"appName":@"weibo",
                                    @"hasNew":@(0),
-                                   @"ads":@[@{@"id":@"1",
-                                              @"name":@"weibo",
-                                              @"url":@"http://weibo.com/",
-                                              @"images":@[@{@"thumnail":@"thumnailImageURL1",
-                                                            @"small"   :@"smallImageURL1",
-                                                            }
-                                                          ]
+                                   @"ads":@[
+                                            @{@"id":@"1",
+                                              @"name":@"百度",
+                                              @"url":@"http://baidu.com/",
                                               },
                                             @{@"id":@"2",
                                               @"name":@"xixi",
-                                              @"url":@"www.sina.com.cn",
-                                              @"images":@[@{@"thumnail":@"thumnailImageURL2",
-                                                            @"small"   :@"smallImageURL2",
-                                                            }
-                                                          ]
+                                              @"url":@"http://baidu.com/",
                                               }
                                             ],
-                                   @"model":@{@"name":@"singleModelName"}
+                                   @"company":@{@"name":@"company name"}
                                    };
   
 #define kUniqueSave
     /*** 解析dic to model ～～～～～～～～ APPInfo 中包含其它model */
-    APPInfo *appInfo = [[APPInfo alloc] initTransformWithDic:appDicNormal];
+    APPInfo *appInfo_ = [[APPInfo alloc] initTransformWithDic:appDicNormal_];
+    NSDictionary *appDicNormal = @{@"version":@(1.0),
+                                   @"appName":@"name of app",
+                                   @"hasNew":@(0)};
+    APPInfo *appInfo = [[APPInfo alloc] initTransformWithDic:appDicNormal_];
+    
+    NSLog(@"version %@,has new %@, appname %@",appInfo.version,(appInfo.hasNew ? @"YES":@"NO"),appInfo.appName);
+
     
     /*** model to dic*/
     NSDictionary *modelDic = [appInfo toDictionary];

@@ -14,17 +14,12 @@
 #import "NSArray+sqlite_store.h"
 
 
-static BISqlitePersistentStore *persistent_store = nil;
 
 
 @implementation NSObject (BlPersistentStore)
 
 + (void)load{
-    NSArray *doucuments = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [[doucuments firstObject] stringByAppendingPathComponent:@"modelSQlite.sqlite"];
-    persistent_store = [[BISqlitePersistentStore alloc] initWithPath:path];
     
-    NSLog(@"sqlite path is  ~~~~~~~  %@  ~~~~~~~~",path);
     
 }
 
@@ -61,7 +56,7 @@ static BISqlitePersistentStore *persistent_store = nil;
     if ([obj boolValue]) {
         return YES;
     }
-    BOOL create = [persistent_store createTableWithClass:[self class]];
+    BOOL create = [[BISqlitePersistentStore persistentStore] createTableWithClass:[self class]];
     if (create) {
         [self setTableExist:create];
     }
@@ -200,7 +195,7 @@ static BISqlitePersistentStore *persistent_store = nil;
     if (keys.count) {
         
         NSString *insert = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",[self tableName],[keys componentsJoinedByString:@","],[values componentsJoinedByString:@","]];
-        return [persistent_store exeSQL:insert];
+        return [[BISqlitePersistentStore persistentStore] exeSQL:insert];
     }
     return NO;
 }
@@ -269,16 +264,16 @@ static BISqlitePersistentStore *persistent_store = nil;
     }
     
     updateSQL = [updateSQL stringByAppendingFormat:@"where %@ = %@",unique_key,unique_key_value];
-    return [persistent_store exeSQL:updateSQL];
+    return [[BISqlitePersistentStore persistentStore] exeSQL:updateSQL];
 }
 
 
 - (BOOL)createTable{
-    return [persistent_store createTableWithClass:[self class]];
+    return [[BISqlitePersistentStore persistentStore] createTableWithClass:[self class]];
 }
 
 - (BOOL)isTableExist{
-    return [persistent_store isExistTable:[self tableName]];
+    return [[BISqlitePersistentStore persistentStore] isExistTable:[self tableName]];
 }
 
 - (BOOL)isExistInTable{
@@ -287,7 +282,7 @@ static BISqlitePersistentStore *persistent_store = nil;
     NSAssert(unique_key != nil, @"检查在表中的唯一性需要指定unique_key");
     NSString *select = [NSString stringWithFormat:@"select count(*) from %@ where %@ = %@",[self tableName],[self class].unique_key,[self valueForKey:[[self class] unique_key]]];
     sqlite3_stmt *statement;
-    if ([persistent_store selectSQL:select SQLstatement:&statement]) {
+    if ([[BISqlitePersistentStore persistentStore] selectSQL:select SQLstatement:&statement]) {
         if ( sqlite3_step(statement) == SQLITE_ROW) {
             int count = sqlite3_column_int(statement, 0);
             return count ? YES : NO;
@@ -299,7 +294,7 @@ static BISqlitePersistentStore *persistent_store = nil;
 
 + (NSArray *)fetchAll{
     [self BI_Properties];
-    NSArray *all = [persistent_store fetchTable:[self class] withProperties:nil WithCondition:nil];
+    NSArray *all = [[BISqlitePersistentStore persistentStore] fetchTable:[self class] withProperties:nil WithCondition:nil];
     return all;
 }
 

@@ -10,6 +10,8 @@
 
 @interface BISqlitePersistentStore : NSObject
 
++ (instancetype)persistentStore;
+
 - (instancetype)initWithPath:(NSString *)path;
 
 @property (nonatomic, assign) sqlite3 *db;

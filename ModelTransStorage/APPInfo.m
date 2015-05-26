@@ -6,11 +6,11 @@
 //
 
 #import "APPInfo.h"
-
-@implementation BaseModel
-
-
-@end
+//
+//@implementation BaseModel
+//
+//
+//@end
 
 @implementation APPInfo
 
@@ -21,5 +21,24 @@
 - (NSString *)description{
     return [NSString stringWithFormat:@"%@",[self toDictionary]];
 }
+
+@end
+
+@implementation ImagePiece
+
+@end
+
+
+
+
+@implementation Company
+
+
+@end
+
+
+
+
+@implementation Ads
 
 @end

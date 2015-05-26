@@ -22,6 +22,17 @@
 
 @implementation BISqlitePersistentStore
 
++ (instancetype)persistentStore{
+    static BISqlitePersistentStore *_persistentStore ;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSArray *doucuments = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *path = [[doucuments firstObject] stringByAppendingPathComponent:@"modelSQlite.sqlite"];
+        _persistentStore = [[BISqlitePersistentStore alloc] initWithPath:path];
+    });
+    return _persistentStore;
+}
+
 - (instancetype)initWithPath:(NSString *)path{
     if (self = [super init]) {
         self.sqlitePath = path;
