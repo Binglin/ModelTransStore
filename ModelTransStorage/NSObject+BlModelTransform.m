@@ -115,7 +115,10 @@ static NSNumberFormatter *_numberTransformFormatter = nil;
             
         }
         
-        [dic_model setObject:value forKey:property_name];
+        
+        if (value) {
+            [dic_model setObject:value forKey:property_name];
+        }
         
     }];
     return dic_model;

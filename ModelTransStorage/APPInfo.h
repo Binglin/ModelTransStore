@@ -9,7 +9,7 @@
 #import "NSObject+BlPersistentStore.h"
 #import "NSObject+BlModelTransform.h"
 #import "RuntimeProperty.h"
-#import "Ads.h"
+
 @class Company;
 
 
